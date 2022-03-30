@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux'
+import store from './app/store';
+
+
+// TODO: the routes should be transported to the App component
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store = {store}>
+    <div className='container'>
+      <BrowserRouter>
+        <App/>
+      </BrowserRouter>
+    </div>
+  </Provider>,
   document.getElementById('root')
 );
 
